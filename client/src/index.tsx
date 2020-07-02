@@ -11,8 +11,8 @@ import injectStyles from "./styles";
 import { resolvers, typeDefs } from "./resolvers";
 
 const IS_LOGGED_IN = gql`
-  query isUserLoggedIn {
-    isLogginedIn @client
+  query IsUserLoggedIn {
+    isLoggedIn @client
   }
 `;
 
@@ -23,7 +23,7 @@ function IsLoggedIn() {
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: "http://localhost:4000/",
+  uri: "http://localhost:4000/graphql",
   headers: {
     authorization: localStorage.getItem("token"),
   },
